@@ -24,7 +24,7 @@ void adresse()
 		}
 		while(query_string [i] != '\0')
 		{
-				if(query_string[i] == '.' && query_string[i+1] != '\0' && query_string[i+1] != '.')
+				if(query_string[i] == '.' && query_string[i+1] != '\0' && query_string[i+1] != '.' && query_string[i+1] != '+')
 				{
 						n++;
 				}
@@ -58,7 +58,7 @@ void adresse()
 				if( n_debut >255 ||  n_deux >255 || n_trois >255 || n_fin >255)
 				{
 						printf("ip invalide");
-						
+						printf("<a href = \"decimal.html\"> <button> retour </button></a>");
 				}
 				
 				else
@@ -88,5 +88,6 @@ void adresse()
 			else
 			{
 					printf("non ip");
+					printf("<a href = \"decimal.html\"> <button> retour </button></a>");
 			}
 }
