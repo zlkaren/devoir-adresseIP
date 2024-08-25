@@ -13,7 +13,7 @@ int main() {
     char login[50];
     char password[50];
 
-    printf("Content-Type: text/html\n\n");
+    printf("content-type: text/html\n\n");
     printf("<html>\n<head>\n<title>Resultat</title>\n</head>\n<body>\n");
 
     query_string = getenv("QUERY_STRING");
