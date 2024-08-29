@@ -4,7 +4,7 @@
 
 void creer_compte(char *login, char *password);
 int verifier_utilisateur(char *login, char *password) ;
-void afficher_formulaire_ip() ;
+void afficher_formulaire_ip(char* login, char* password) ;
 
 int main() {
     char * query_string;
@@ -32,7 +32,7 @@ int main() {
         if (verifier_utilisateur(new_login, new_password)) 
         {
             printf("<p> <center><b>Connexion automatique reussie </b></center>!</p>\n");
-            afficher_formulaire_ip();  
+            afficher_formulaire_ip(new_login, new_password);  
         } 
         else 
         {
@@ -46,7 +46,7 @@ int main() {
         if (verifier_utilisateur(login, password)) 
         {
             printf("<p>Connexion reussie !</p>\n");
-            afficher_formulaire_ip();  
+            afficher_formulaire_ip(login,  password);  
         } 
         else 
         {
@@ -59,13 +59,20 @@ int main() {
     return 0;
 }
 
-void afficher_formulaire_ip() 
+void afficher_formulaire_ip(char* login ,char* password) 
 {
     printf("<h2>Entrer l'adresse IP</h2>\n");
     printf("<form action=\"decimal.cgi\" method=\"GET\">\n");
     printf("Adresse IP: <input type=\"text\" name=\"ip\" >\n");
     printf("<input type=\"submit\" value=\"Envoyer\">\n");
     printf("</form>\n");
+	printf("<form action = \"about.cgi\" method = \"get\">");
+	printf("<input type = \"hidden\" name = \"login\" value = \"%s\" >", login);
+	printf("<input type = \"hidden\" name = \"password\" value = \"%s\" >", password);
+
+	printf("<input type = \"submit\" value = \"A propos \">");
+    printf("</form>\n");
+	
 }
 
 int verifier_utilisateur(char *login, char *password) {
